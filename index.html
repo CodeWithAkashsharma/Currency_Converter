@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="heading">Currency Converter</h1>
+    <div class="container">
+        <form>
+            <div class="amount">
+                <p>Enter amount</p>
+                <input type="number" value="1" min="0" step="0.01">
+            </div>
+
+            <div class="dropdown">
+                <div class="from">
+                    <p>From</p>
+                    <div class="select-container">
+                        <img src="https://flagsapi.com/US/flat/64.png" alt="flag" id="from-flag">
+                        <div class="custom-select" id="from-select">
+                            <div class="select-selected">USD</div>
+                            <div class="select-items select-hide">
+                                <input type="text" class="search-input" placeholder="Search currency...">
+                                <div class="select-options"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <i class="fa-solid fa-right-left exchange-icon" id="swap-btn"></i>
+                
+                <div class="to">
+                    <p>To</p>
+                    <div class="select-container">
+                        <img src="https://flagsapi.com/IN/flat/64.png" alt="flag" id="to-flag">
+                        <div class="custom-select" id="to-select">
+                            <div class="select-selected">INR</div>
+                            <div class="select-items select-hide">
+                                <input type="text" class="search-input" placeholder="Search currency...">
+                                <div class="select-options"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="msg">1 USD = 83.74 INR</div>
+            <button type="submit">Get Rate</button>
+        </form>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

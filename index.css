@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #b2675e;
+  min-height: 100vh;
+  gap: 4rem;
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  overflow-x: hidden;
+  padding: 2rem 1rem;
+}
+
+.heading {
+  font-family: "Merriweather", serif;
+  font-weight: 800;
+  font-style: normal;
+  color: #313638;
+  margin-top: 1rem;
+  font-size: 2.5rem;
+}
+
+.container {
+  font-weight: 600;
+  background-color: #ffffff4b;
+  backdrop-filter: blur(20px);
+  min-height: 60vh;
+  width: 45vw;
+  max-width: 600px;
+  min-width: 320px;
+  border-radius: 1rem;
+  margin-bottom: 4rem;
+  padding: 2rem;
+}
+
+form {
+  margin: 2rem 0 1rem 0;
+}
+
+.from {
+  display: inline-block;
+  margin-right: 8rem;
+  margin-top: 2.5rem;
+}
+
+.select-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.to {
+  display: inline-block;
+  margin-left: 8rem;
+  margin-top: 1rem;
+}
+
+.msg {
+  margin-top: 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+button {
+  margin-top: 1.5rem;
+  padding: 0.5rem 4rem;
+  background-color: #313638;
+  color: #dcdcdc;
+  border-radius: 1rem;
+  font-weight: 600;
+  border: none;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+button:hover {
+  box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.4);
+}
+
+.amount p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.amount input {
+  border-radius: 0.3rem;
+  color: #ececec;
+  background-color: #313638;
+  height: 2rem;
+  border: none;
+  padding: 0.5rem;
+  width: 120px;
+  text-align: center;
+  padding-left: 20px;
+}
+
+img {
+  border-radius: 0.3rem;
+  width: 32px;
+  height: 24px;
+}
+
+.exchange-icon {
+  font-size: 1.2rem;
+  color: #313638;
+  cursor: pointer;
+  margin: 0 1rem;
+  transition: transform 0.3s ease;
+}
+
+.exchange-icon:hover {
+  transform: rotate(180deg);
+}
+
+
+.custom-select {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+}
+
+.select-selected {
+  background-color: #ececec;
+  color: black;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.select-selected:after {
+  content: "▼";
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.select-selected.select-arrow-active:after {
+  content: "▲";
+}
+
+.select-items {
+  position: absolute;
+  background-color: white;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-radius: 0.3rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.select-hide {
+  display: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-input::placeholder{
+    font-size: 11px;
+}
+
+.select-options {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.select-option {
+  color: black;
+  padding: 8px 16px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.select-option:hover {
+  background-color: #f1f1f1;
+}
+
+.select-option img {
+  width: 20px;
+  height: 15px;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .from {
+    margin-right: 2rem;
+  }
+  .to {
+    margin-left: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dropdown {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .from,
+  .to {
+    margin: 0;
+    display: block;
+  }
+
+  .exchange-icon {
+    margin: 1rem 0;
+    transform: rotate(90deg);
+  }
+
+  .container {
+    width: 90vw;
+    min-height: 70vh;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  button {
+    padding: 0.4rem 2rem;
+    font-size: 0.9rem;
+  }
+
+  .amount input {
+    width: 100px;
+  }
+
+  .amount p {
+    font-size: 1rem;
+  }
+
+  .msg {
+    font-size: 1rem;
+  }
+
+  .container {
+    width: 95vw;
+    padding: 1.5rem;
+  }
+
+  .heading {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    width: 98vw;
+    padding: 1rem;
+  }
+
+  .custom-select {
+    width: 80px;
+  }
+
+  .select-selected {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+}
